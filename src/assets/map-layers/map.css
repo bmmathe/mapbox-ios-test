@@ -1,0 +1,58 @@
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.map_start_location {
+  background-image: url('map_route_start.svg');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+.map_finish_location {
+  background-image: url('map_route_finish.svg');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+.map_current_location {
+  background-image: url('map_current_location.svg');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+.map_route_user_location {
+  background-image: url('map_route_user_location.svg');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
+:root {
+  --marker-background-color: black; 
+  --marker-text-color: white; 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --marker-background-color: white; 
+    --marker-text-color: black;
+  }
+}
+
+.map_distance_marker {
+  background-color: var(--marker-background-color);
+  border-radius: 50%; /* Make it a circle */
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--marker-text-color);
+  font-size: 8px;
+  font-weight: bold;
+}
