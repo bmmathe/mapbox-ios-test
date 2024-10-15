@@ -62,7 +62,7 @@ function addRouteLayers(
         "icon-size": 0.5,
         "symbol-placement": "line",
         "symbol-spacing": 25,
-        "symbol-z-elevate": false,
+        //"symbol-z-elevate": false, // not available in mapbox v2
       },
     });
 

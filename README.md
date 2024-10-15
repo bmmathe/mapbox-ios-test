@@ -2,6 +2,9 @@
 
 ## Getting started
 
+> If you have already installed dependencies from the main branch you may want to remove the node_modules directory and install again
+> `rm -rf node_modules`
+
 Clone the repository and have Node 18+ installed.
 
 Install dependencies
