@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+# Mapbox v3.7 Test on iOS in a Capacitor app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting started
 
-Currently, two official plugins are available:
+Clone the repository and have Node 18+ installed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Install dependencies
 
-## Expanding the ESLint configuration
+`npm install`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Run the build
 
-- Configure the top-level `parserOptions` property like this:
+`npm run build`
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Sync iOS app
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+`npx cap sync`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Open XCode
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+`npx cap open ios`
+
+Run the application targetting an iOS device from XCode.
+
+### Reproduction Steps
+
+Once the app is loaded, select the first map "Dirty Sheets", once the map loads, change the style to Satellite by tapping the Satellite button.
+
+Click the back button and load the second map "Peachtree Road Race", change to satellite view, then click the Back button.
+
+Repeat these steps again until the you get the white screen and crash in XCode (for me it fails on the 3rd map load).
+
+### Developing
+
+`npm run dev`

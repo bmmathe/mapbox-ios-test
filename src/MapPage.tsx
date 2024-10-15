@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import DirtySheetz from "./assets/DirtySheetz.json";
 import { RouteRecord } from "./RouteRecord";
 import PeachtreeRoadRace from "./assets/PeachtreeRoadRace.json";
-import { FaSatellite } from "react-icons/fa";
+import { FaMap, FaSatellite } from "react-icons/fa";
 
 function MapPage() {
   const navigate = useNavigate();
@@ -32,8 +32,18 @@ function MapPage() {
       <div className="w-full h-full relative">
         <MapComponent routeJson={routeJson} showSatellite={showSatellite} />
         <div className="absolute top-0 right-0 p-2 z-10">
-          <button onClick={() => setShowSatellite((curr) => !curr)}>
-            <FaSatellite size={24} />
+          <button
+            onClick={() => setShowSatellite((curr) => !curr)}
+            className="p-0 w-12 h-12 bg-blue-500 rounded-full shadow transition ease-in duration-200"
+          >
+            {showSatellite ? (
+              <FaMap size={24} className="w-6 h-6 inline-block text-white" />
+            ) : (
+              <FaSatellite
+                size={24}
+                className="w-6 h-6 inline-block text-white"
+              />
+            )}
           </button>
         </div>
       </div>
