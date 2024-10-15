@@ -92,8 +92,8 @@ function MapComponent({
     }
     mapRef.current.setStyle(
       showSatellite
-        ? "mapbox://styles/mapbox/satellite-v9"
-        : "mapbox://styles/mapbox/streets-v11"
+        ? "mapbox://styles/wahoofitness/cm15c9g4o013a01nt30gmenpz"
+        : "mapbox://styles/wahoofitness/cm16v8j4n00hc01pce7do17on"
     );
   }, [showSatellite, isMapLoaded]);
 
